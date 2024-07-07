@@ -4,7 +4,7 @@ const app=express()
 const db=require("./db")
 app.use(express.json());
 
-app.listen(8000,()=>
+app.listen(8001,()=>
 {
     console.log("server started")
     
@@ -25,7 +25,7 @@ app.get("/player",(req,res)=>
 })
 app.get("/players/:number",(req,res)=>
 {
-    console.log(req.body.number)
+    
     const id=req.params.number
     db.getPlayer(id)
     .then((data)=>
